@@ -2,7 +2,7 @@ freeStyleJob('CreateFolderfreestyle') {
 	scm {
         git {
             remote {
-                name('remoteB')
+                name('master')
                 url('git@server:pragnyasahoo/JenkinTest.git')
             }
 		}
