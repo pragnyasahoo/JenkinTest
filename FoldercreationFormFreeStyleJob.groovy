@@ -1,4 +1,4 @@
-freeStyleJob('Create Folder freestyle') {
+freeStyleJob('CreateFolderfreestyle') {
     steps {
         dsl {
             external('FoldercreationScript.groovy')          
