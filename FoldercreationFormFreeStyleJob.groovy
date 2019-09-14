@@ -1,15 +1,19 @@
 freeStyleJob('CreateFolderfreestyle') {
-	scm {
+	description('Create Folder by freestyle downstream job')
+      scm {
         git {
             remote {
-                name('master')
-                url('git@server:pragnyasahoo/JenkinTest.git')
+                name('origin')
+                url('https://github.com/pragnyasahoo/JenkinTest.git')
             }
-		}
-	}
+        }
+      }
     steps {
         dsl {
-            external('FoldercreationScript.groovy')          
+            external('FoldercreationScript.groovy')
+            removeAction('DISABLE')
+            ignoreExisting()
+         
         }
     }
 }
