@@ -1,7 +1,11 @@
 freeStyleJob('CreateFolderfreestyle') {
-	scm
-	{
-		github('pragnyasahoo/JenkinTest','master','ssh')
+	scm {
+        git {
+            remote {
+                name('remoteB')
+                url('git@server:pragnyasahoo/JenkinTest.git')
+            }
+		}
 	}
     steps {
         dsl {
