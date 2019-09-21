@@ -12,11 +12,13 @@ pipelineJob('pipelinejob') {
     definition {
         cps {
             script(readFileFromWorkspace('PipeLinesript.groovy'))
+           
+            job('mypiplplinejob') {
+            description('My first pipeline job')
+             }   
             
         }
     }
 
-    job('mypiplplinejob') {
-    description('My first pipeline job')
-}
+    
 }
