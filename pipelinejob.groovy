@@ -17,6 +17,6 @@ pipelineJob('pipelinejob') {
     }
 
     job('mypiplplinejob') {
-    description('My first job')
+    description('My first pipeline job')
 }
 }
