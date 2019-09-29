@@ -1,21 +1,11 @@
-node('master') {
-    git(
-			url: "$https://github.com/pragnyasahoo/JenkinTest.git",
-			branch: "master"
-		)
-    stage("Prepare"){
-        println("Preparing...")
-    }
-    stage("Clone"){
-        println("Building the app Clone maven")
-    }
-    stage("Build"){
-        println("Building the app using maven")
-    }
-    stage("Test"){
-        println("Testing...")
-    }
-    stage("Deploy"){
-        println("Deploying...")
+pipelineJob('testpipelinejob') {
+   
+    definition {
+        cps {
+			//def jobScript = readFileFromWorkspace('cit.groovy')
+			//script(jobScript)
+			def approvals = org.jenkinsci.plugins.scriptsecurity.scripts.ScriptApproval.get()
+			approvals.approveScript(approvals.hash(jobScript,"groovy"))
+        }
     }
 }
